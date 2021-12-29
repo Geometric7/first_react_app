@@ -32,6 +32,7 @@ export default App; */
 import Hero from './components/Hero/Hero'
 import SearchForm from './components/SearchForm/SearchForm'
 import List from './components/List/List'
+import Container from './components/Container/Container'
 //import TextInput from './components/TextInput/TextInput'
 //import Button from './components/Button/Button'
 //import Column from './components/Column/Column'
@@ -39,11 +40,11 @@ import List from './components/List/List'
 
 const App = () => {
   return (
-    <div>
+    <Container>
       <Hero />
       <SearchForm />
       <List />
-    </div>
+    </Container>
   );
 };
 
