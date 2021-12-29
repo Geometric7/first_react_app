@@ -1,7 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+//import logo from './logo.svg';
+//import './App.css';
 
-function App() {
+/*function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -20,6 +20,31 @@ function App() {
       </header>
     </div>
   );
-}
+}*/
+
+/*const App = () => {
+  return (
+    <h1>Hello world</h1>
+  );
+};
+
+export default App; */
+import Hero from './components/Hero/Hero'
+import SearchForm from './components/SearchForm/SearchForm'
+import List from './components/List/List'
+//import TextInput from './components/TextInput/TextInput'
+//import Button from './components/Button/Button'
+//import Column from './components/Column/Column'
+
+
+const App = () => {
+  return (
+    <div>
+      <Hero />
+      <SearchForm />
+      <List />
+    </div>
+  );
+};
 
 export default App;
