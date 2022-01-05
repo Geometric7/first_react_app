@@ -29,10 +29,11 @@
 };
 
 export default App; */
-import Hero from './components/Hero/Hero'
-import SearchForm from './components/SearchForm/SearchForm'
-import List from './components/List/List'
-import Container from './components/Container/Container'
+import React from 'react';
+import Hero from './components/Hero/Hero.js';
+import SearchForm from './components/SearchForm/SearchForm.js';
+import List from './components/List/List.js';
+import Container from './components/Container/Container.js';
 //import TextInput from './components/TextInput/TextInput'
 //import Button from './components/Button/Button'
 //import Column from './components/Column/Column'

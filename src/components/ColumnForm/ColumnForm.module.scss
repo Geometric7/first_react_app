@@ -1,13 +1,8 @@
 @import '../../styles/settings.scss';
-
 .columnForm {
-  margin: 0 auto;
-  width: 55%;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  text-align: center;
+text-align: center;
+padding: 10px;
+
 }
 
 .columnFormTitle {
@@ -18,26 +13,15 @@
   margin: 12px;
 }
 
-.columnFormButton {
-  padding-top: 26px;
-}
+@media (max-width: 767px) {
 
-.columnFormSpan {
- text-align: center;
- margin: 5% 0;
-}
+    .component {
+      width: 100%;
+      margin: 0 0 $base-size 0;
+    }
 
-@media (max-width: 1200px) {
-  .columnForm {
-    width: 80%;
-  }
-}
-
-@media (max-width: 787px) {
-  .columnForm {
-    flex-direction: column;
-  }
-  .columnFormButton {
+    .columnFormButton {
     padding-top: 12px;
   }
-}
+
+  }
