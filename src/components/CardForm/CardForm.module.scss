@@ -1,16 +1,8 @@
 @import '../../styles/settings.scss';
-.columnForm {
+
+.cardForm {
 text-align: center;
 padding: 10px;
-
-}
-
-.columnFormTitle {
-  margin: 12px;
-}
-
-.columnFormInput {
-  margin: 12px;
 }
 
 @media (max-width: 767px) {
@@ -19,9 +11,5 @@ padding: 10px;
       width: 100%;
       margin: 0 0 $base-size 0;
     }
-
-    .columnFormButton {
-    padding-top: 12px;
-  }
-
+  
   }
