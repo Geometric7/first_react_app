@@ -1,9 +1,29 @@
 import { createStore } from 'redux';
 import initialState from './initialState';
+import shortid from 'shortid';
+
+export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
+export const addCard = payload => ({ type: 'ADD_CARD', payload });
 
 const reducer = (state, action) => {
-  return state;
+  //if(action.type === 'ADD_COLUMN') return { ...state, columns: [...state.columns, { id: shortid(), ...action.payload,  }]};
+  //return state;
+
+switch (action.type) {
+  case 'ADD_COLUMN':
+    return { ...state, columns: [...state.columns, { id: shortid(), ...action.payload,  }]};
+  case 'ADD_CARD':
+    return { ...state, cards: [...state.cards, {id: shortid(), ...action.payload, }]};
+  default:
+    return state;
+  }
+
 };
+
+
+//const dispatch = action => {
+  //state = reducer(state, action);
+//};
 
 const store = createStore(
   reducer,
