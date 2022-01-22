@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 //import Card from '../Card/Card';
 //import { useState } from 'react';
 //import shortid from 'shortid';
+import { getAllColumns } from '../../redux/store';
 
 const List = () => {
 
@@ -61,7 +62,7 @@ const List = () => {
       }, 2000);
     }, []);*/
 
-  const columns = useSelector(state => state.columns);
+  const columns = useSelector(state => getAllColumns(state));
 
   return (
     <div className={styles.list}>
