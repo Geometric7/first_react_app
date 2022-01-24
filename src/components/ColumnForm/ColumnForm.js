@@ -26,17 +26,17 @@ const ColumnForm = props => {
       };*/
     return (
       <form className={styles.columnForm} onSubmit={handleSubmit}>
-    <div className={styles.columnFormInput}>
+      <div className={styles.columnFormInput}>
         <span>Title: </span><TextInput type="text" value={title} onChange={e => setTitle(e.target.value)} />
-        </div>
-        <div className={styles.columnFormSpan}>
-          <span>Icon: </span> <TextInput type="text" value={icon} onChange={e => setIcon(e.target.value)} />
-        </div>
-        <div className={styles.columnFormButton}>
-          <Button>Add column</Button>
-        </div>
+      </div>
+      <div className={styles.columnFormSpan}>
+        <span>Icon: </span> <TextInput type="text" value={icon} onChange={e => setIcon(e.target.value)} />
+      </div>
+      <div className={styles.columnFormButton}>
+        <Button>Add column</Button>
+      </div>
       </form>
-);
+    );
 };
 
 export default ColumnForm;
