@@ -2,7 +2,7 @@ import PageUntitle from '../PageUntitle/PageUntitle'
 
 const NotFound = () => {
   return(
-    <PageUntitle>Oops! It is 404! THIS IS NOT THE WEB YOU ARE LOOKING FOR.</PageUntitle>
+    <PageUntitle addMargin><h2>Oops! It is 404!</h2> THIS IS NOT THE WEB YOU ARE LOOKING FOR.</PageUntitle>
   );
 };
 
