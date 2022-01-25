@@ -8,8 +8,12 @@ import strContains from '../utils/strContains'
   //.filter(card => card.columnId === columnId && card.title.toLowerCase().includes(state.searchString.toLowerCase()));
 export const getFilteredCards = ({ cards, searchString }, columnId) => cards
   .filter(card => card.columnId === columnId && strContains(card.title, searchString));
-
+export const getAllLists = state => state.lists;
 export const getAllColumns = state => state.columns;
+export const getListId = ({ lists }, listId) => lists.find(list => list.id === listId);
+export const getColumnsByList = ({ columns }, listId ) => columns.filter(column => column.listId === listId)
+
+export const addList = payload => ({ type: 'ADD_LIST', payload });
 export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
 export const addCard = payload => ({ type: 'ADD_CARD', payload });
 
@@ -18,6 +22,8 @@ const reducer = (state, action) => {
   //return state;
 
 switch (action.type) {
+  case 'ADD_LIST':
+      return { ...state, lists: [...state.lists, { ...action.payload, id: shortid() }]};
   case 'ADD_COLUMN':
     return { ...state, columns: [...state.columns, { id: shortid(), ...action.payload,  }]};
   case 'ADD_CARD':

@@ -13,7 +13,7 @@ const ColumnForm = props => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(addColumn({ title, icon }));
+        dispatch(addColumn({ title, icon, listId: props.listId }));
         setTitle('');
         setIcon('');
     };
@@ -29,7 +29,7 @@ const ColumnForm = props => {
       <div className={styles.columnFormInput}>
         <span>Title: </span><TextInput type="text" value={title} onChange={e => setTitle(e.target.value)} />
       </div>
-      <div className={styles.columnFormSpan}>
+      <div className={styles.columnFormInput}>
         <span>Icon: </span> <TextInput type="text" value={icon} onChange={e => setIcon(e.target.value)} />
       </div>
       <div className={styles.columnFormButton}>

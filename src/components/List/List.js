@@ -5,78 +5,35 @@ import { useSelector } from 'react-redux';
 //import Card from '../Card/Card';
 //import { useState } from 'react';
 //import shortid from 'shortid';
-import { getAllColumns } from '../../redux/store';
+//import { getAllColumns } from '../../redux/store';
+import { getColumnsByList, getListId } from '../../redux/store';
+import { useParams } from 'react-router';
+import SearchForm from '../SearchForm/SearchForm';
+import { Navigate } from 'react-router-dom';
+
 
 const List = () => {
 
-  /*const [columns, setColumns] = useState([
-    {
-      id: 1,
-      title: 'Books',
-      icon: 'book',
-      cards: [
-        { id: 1, title: 'This is life' },
-        { id: 2, title: 'The Shining' }
-      ]
-    },
-    {
-      id: 2,
-      title: 'Movies',
-      icon: 'film',
-      cards: [
-        { id: 1, title: 'Inception' },
-        { id: 2, title: 'Star Wars' }
-      ]
-    },
-    {
-      id: 3,
-      title: 'Games',
-      icon: 'gamepad',
-      cards: [
-        { id: 1, title: 'The Witcher' },
-        { id: 2, title: 'Skyrim' }
-      ]
-    }
-  ]);*/
+  const { listId } = useParams();
 
-  /*const addColumn = newColumn => {
-    setColumns([...columns, { id: shortid(), title: newColumn.title, icon: newColumn.icon, cards: [] }]);
-  };
+  const listData = useSelector(state => getListId(state, listId))
+  const columns = useSelector(state => getColumnsByList(state, listId))
 
-  const addCard = (newCard, columnId) => {
-    console.log(newCard)
-		const columnsUpdated = columns.map(column => {
-			if(column.id === columnId)
-				return { ...column, cards: [...column.cards, { id: shortid(), title: newCard.title, columnId, }]}
-			else
-				return column;
-		})
-
-		setColumns(columnsUpdated);
-
-	};*/
-
-  /*useEffect(() => {
-    	setTimeout(() => {
-        setColumns([...columns, { id: 4, title: 'Test column'}]);
-      }, 2000);
-    }, []);*/
-
-  const columns = useSelector(state => getAllColumns(state));
-
+if(!listData) return <Navigate to="/"/>
   return (
     <div className={styles.list}>
       <header className={styles.header}>
-        <h2 className={styles.title}>Things to do<span>soon!</span></h2>
+        <h2 className={styles.title}>{listData.title}</h2>
       </header>
-      <p className={styles.description}>Interesting things I want to check out!</p>
+      <SearchForm />
+      <p className={styles.description}>{listData.description}</p>
       <section className={styles.columns}>
         {columns.map(column => <Column
           key={column.id}
           {...column} />
         )}
       </section>
-      <ColumnForm />
+      <ColumnForm listId={listData.id}/>
     </div>
   );
 
