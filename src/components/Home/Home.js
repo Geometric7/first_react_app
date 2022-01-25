@@ -1,6 +1,7 @@
-import Hero from '../Hero/Hero'
+import Hero from '../Hero/Hero';
 //import SearchForm from '../SearchForm/SearchForm'
-import Lists from '../Lists/Lists'
+import Lists from '../Lists/Lists';
+import ListForm from '../ListForm/ListForm';
 
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
     <>
       <Hero />
       <Lists />
+      <ListForm />
     </>
   );
 }
