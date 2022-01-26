@@ -23,9 +23,12 @@
 }
 
 .nofav {
+  font-size: 45px;
   text-align: center;
-  margin-bottom: -55px;
-  z-index: 1;
+  padding: ($base-size * 1.5);
+  margin: 0 auto;
+  //margin-bottom: -55px;
+  //z-index: 1;
 
 
 }
