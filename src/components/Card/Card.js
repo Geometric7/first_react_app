@@ -12,9 +12,9 @@ const Card = props => {
   }
 
     return (
-        <li className={styles.card}>{props.title}
-          <button onClick={handleClick} className={clsx("fa fa-star-o", styles.button, props.isFavorite && styles.isFavorite)}></button>
-        </li>
+      <li className={styles.card}>{props.title}
+        <button onClick={handleClick} className={clsx("fa fa-star-o", styles.button, props.isFavorite && styles.isFavorite)}></button>
+      </li>
     )
 }
 
