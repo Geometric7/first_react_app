@@ -1,12 +1,12 @@
 
-import Container from './components/Container/Container.js';
-import NavBar from './components/NavBar/NavBar.js';
-import Favorite from './components/Favorite/Favorite.js';
-import About from './components/About/About.js';
-import Home from './components/Home/Home.js'
+import Container from './components/Container/Container';
+import NavBar from './components/NavBar/NavBar';
+import Favorite from './components/Favorite/Favorite';
+import About from './components/About/About';
+import Home from './components/Home/Home'
 import { Routes, Route } from 'react-router-dom';
 import NotFound from './components/NotFound/NotFound';
-import List from './components/List/List'
+import List from './components/List/List';
 
 
 
