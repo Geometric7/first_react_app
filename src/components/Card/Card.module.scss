@@ -10,6 +10,8 @@
     display: flex;
     justify-content: space-between;
     font-weight: bold;
+    transition: $transition;
+
 }
 
 .button {
@@ -22,11 +24,18 @@
   font-weight: 700;
   text-transform: uppercase;
   transition: $transition;
+  margin-left: 10px;
+
 
   &:hover {
       color: goldenrod;
   }
-  &.isFavorite {
+
+  &.trash:hover {
     color: $color-warning;
+  }
+
+  &.isFavorite {
+    color: goldenrod;
   }
 }
